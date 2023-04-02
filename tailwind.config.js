@@ -10,7 +10,8 @@ module.exports = {
         alt: "#1A1E1F",
         trans: "rgba(255, 255, 255, 0.25)",
         light: "#EFEEE0",
-        blueish: "#609EAF"
+        blueish: "#609EAF",
+        secondary: "#FACD66"
       }, 
 
       fontFamily: {

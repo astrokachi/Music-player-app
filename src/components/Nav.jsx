@@ -14,7 +14,12 @@ import HamIcons from './HamIcons';
 import { StateContext } from '../context/share';
 
 const Nav = () => {
-  const {toggle,setToggle} = useContext(StateContext);
+  const { toggle, setToggle } = useContext(StateContext);
+  
+  const auth = async () => {
+    window.location.replace('http://www.last.fm/api/auth/?api_key=5505959ff8488ab08d95bb5b7dcdff84');
+  };
+
 
   return (
     <div className={`flex items-center gap-9 md:px-2 `}>
@@ -34,7 +39,7 @@ const Nav = () => {
       </div>
 
       <div
-        className={`absolute md:hidden top-0 h-screen z-10  translate-x-[800px] bg-alt w-[100%] right-0 px-6 py-8 ${
+        className={`absolute md:hidden top-0 h-screen z-20  translate-x-[800px] bg-alt w-[100%] right-0 px-6 py-8 ${
           toggle.close && 'animate-closing'
         } ${toggle.open && 'animate-sliding'}`}
       >
@@ -45,7 +50,7 @@ const Nav = () => {
           <HamIcons icon={playlist} text="My Collections" />
           <HamIcons icon={radio} text="Radio" />
           <HamIcons icon={videos} text="Music Videos" />
-          <HamIcons icon={profile} text="Profile" />
+          <HamIcons icon={profile} text="Profile" onClick={auth}/>
           <HamIcons icon={logout} text="Log out" />
         </div>
       </div>

@@ -4,9 +4,10 @@ import Background from '../assets/Vector.svg';
 import likes from '../assets/Frame.svg';
 import heart from '../assets/Heart.svg';
 import back2 from '../assets/back2.svg';
+import cover0 from '../assets/cover0.png';
 import Card from './Card';
 
-const Hero = () => {
+const Hero = ({ topCharts }) => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
   function getWindowSize() {
@@ -33,12 +34,12 @@ const Hero = () => {
       }`}
     >
       <div
-        className={`relative md:ml-20 mt-10 md:h-[300px] h-[340px] mb-10 ${
+        className={`relative md:ml-20 mt-2 md:h-[300px] h-[340px] mb-10 ${
           windowSize.innerWidth < 1070 ? 'w-[full]' : 'w-[60%]'
         }`}
       >
         <div
-          className={`bg-blueish flex md:rounded-[40px] rounded-[20px] justify-between absolute z-[2]`}
+          className={`bg-blueish flex md:rounded-[40px] w-full rounded-[20px] justify-between absolute z-[2]`}
           style={{
             backgroundImage: `url(${window.innerWidth > 767 ? Background : back2})`,
             backgroundPositionX: 'right',
@@ -70,15 +71,16 @@ const Hero = () => {
       </div>
 
       <div
-        className={`mt-10 flex-grow ${
+        className={`mt-2 flex-grow ${
           windowSize.innerWidth < 1070 && windowSize.innerWidth > 768 ? 'ml-20 ' : 'ml-0'
         } ${windowSize.innerWidth <= 640 && 'ml-0'} `}
       >
         <header className="font-bold text-2xl">Top charts</header>
         <div className="overflow-x-scroll md:overflow-hidden md:flex-col flex-row w-full h-max flex md:gap-0 gap-4 hide">
-          <Card />
-          <Card />
-          <Card />
+          
+          <Card name={'Everybody wants to rule the world'} artiste={'Tears for fears'} time={'4:00'} cover={cover0} />
+          <Card name={'Everybody wants to rule the world'} artiste={'Tears for fears'} time={'4:00'} cover={cover0} />
+          <Card name={'Everybody wants to rule the world'} artiste={'Tears for fears'} time={'4:00'} cover={cover0} />
         </div>
       </div>
     </div>
